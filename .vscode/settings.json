@@ -1,0 +1,13 @@
+{
+  "[javascript]": {
+		"editor.formatOnSave": true
+	},
+	"[javascriptreact]": {
+		"editor.formatOnSave": true
+	},
+	"eslint.enable": true,
+	"javascript.validate.enable": false,
+	"flow.pathToFlow": "${workspaceRoot}/node_modules/.bin/flow",
+	"flow.useNPMPackagedFlow": true,
+	"flow.runOnAllFiles": true
+}
