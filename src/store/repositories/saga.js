@@ -4,33 +4,27 @@ import { delay } from 'redux-saga';
 import type { Saga } from 'redux-saga';
 import { all, call, put, takeLatest } from 'redux-saga/effects';
 import { actionTypes } from 'redux-form';
-import actions, { REQUEST } from './actions';
-import { fetchRepositories } from './api';
+import getAction from '../../lib/getAction';
+import apiActions, { CALL, RESET } from '../api/actions';
+import api from '../../api';
+
+const { methods: apiMethods } = api;
 
 export default function* repositoriesSaga(): Saga<void> {
-  yield all([
-    takeLatest(actionTypes.CHANGE, handleChangeInput),
-    takeLatest(REQUEST, handleRequest),
-  ]);
+  yield all([takeLatest(actionTypes.CHANGE, handleChangeInput)]);
 }
 
 type ActionProps = { payload: string };
 
 export function* handleChangeInput({ payload }: ActionProps): Saga<void> {
   yield call(delay, 500);
-  yield put(actions.repositiories.request(payload));
-}
-
-export function* handleRequest({ payload }: ActionProps): Saga<void> {
   if (payload === '') {
-    yield put(actions.repositiories.reset());
+    yield put(getAction(apiActions, RESET)(apiMethods.REPOSITORIES_SEARCH));
     return;
   }
-  try {
-    const data = yield call(fetchRepositories, payload);
-
-    yield put(actions.repositiories.success({ data }));
-  } catch (error) {
-    yield put(actions.repositiories.failed({ error }));
-  }
+  yield put(
+    getAction(apiActions, CALL)(apiMethods.REPOSITORIES_SEARCH, {
+      params: { q: payload },
+    })
+  );
 }

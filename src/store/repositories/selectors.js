@@ -1,11 +1,15 @@
 /* @flow */
 
 import { createSelector } from 'reselect';
-import { REDUCER_NAME } from './reducers';
+import { get } from 'lodash/fp';
+import apiSelectors from '../api/selectors';
 
-export const getData = (state: Object) => state[REDUCER_NAME].data;
+const apiRepositoriesSelector = apiSelectors('repositories.search');
+const getItems = get('items');
 
 export const getRepositories = createSelector(
-  getData,
-  (data = {}) => data.items
+  apiRepositoriesSelector.getData,
+  getItems
 );
+
+export const getRepositoriesIsLoading = apiRepositoriesSelector.getLoading;

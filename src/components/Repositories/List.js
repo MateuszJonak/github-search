@@ -1,6 +1,6 @@
 /* @flow */
 
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -15,7 +15,7 @@ type Props = {
   repositories: Array<Object>,
 };
 
-class List extends Component<Props> {
+class List extends React.Component<Props> {
   static defaultProps = {
     repositories: [],
   };

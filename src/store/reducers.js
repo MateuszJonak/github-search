@@ -1,11 +1,8 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import {
-  repositoriesReducer,
-  REDUCER_NAME as REPOSITORIES_REDUCER_NAME,
-} from './repositories';
+import { apiReducer, REDUCER_NAME as API_REDUCER_NAME } from './api';
 
 export default combineReducers({
   form,
-  [REPOSITORIES_REDUCER_NAME]: repositoriesReducer,
+  [API_REDUCER_NAME]: apiReducer,
 });
