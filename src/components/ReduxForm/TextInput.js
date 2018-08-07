@@ -3,11 +3,11 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
-type Props = {
+export type Props = {
   input: Object,
   meta: {
     touched: boolean,
-    error: String,
+    error: string,
   },
 };
 

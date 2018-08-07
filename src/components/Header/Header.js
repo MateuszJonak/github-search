@@ -10,6 +10,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import GithubCircleIcon from 'mdi-react/GithubCircleIcon';
 import GitHubLogin from './GitHubLogin';
+import api from '../../api';
+import { type Profile } from '../../lib/profile';
 import {
   getGitHubProfile,
   getGitHubIsLogged,
@@ -18,9 +20,10 @@ import {
 
 type Props = {
   classes: Object,
-  githubProfile: Object,
+  githubProfile: Profile,
   githubIsLogged: boolean,
   githubIsLoading: boolean,
+  apiReset: string => void,
 };
 
 const styles = theme => ({
@@ -56,7 +59,7 @@ class Header extends React.Component<Props> {
     } = this.props;
     if (githubIsLogged) {
       return (
-        <Button variant="text" color="inherit">
+        <Button variant="text" color="inherit" onClick={this.logout}>
           <GithubCircleIcon className={classes.extendedIcon} />
           {githubProfile.id}
         </Button>
@@ -69,6 +72,8 @@ class Header extends React.Component<Props> {
       </GitHubLogin>
     );
   }
+
+  logout = () => this.props.apiReset(api.methods.GITHUB_AUTH);
 }
 const mapStateToProps = state => ({
   githubIsLogged: getGitHubIsLogged(state),
@@ -81,5 +86,6 @@ export default compose(
   connect(
     mapStateToProps,
     null
-  )
+  ),
+  api.withActions
 )(Header);

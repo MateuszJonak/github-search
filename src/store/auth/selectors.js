@@ -4,10 +4,11 @@ import { createSelector } from 'reselect';
 import { get } from 'lodash/fp';
 import api from '../../api';
 import apiSelectors from '../api/selectors';
+import { type Profile } from '../../lib/profile';
 
 const apiGitHubSelector = apiSelectors(api.methods.GITHUB_AUTH);
 
-export const getGitHubProfile = createSelector(
+export const getGitHubProfile: ({}) => Profile = createSelector(
   apiGitHubSelector.getData,
   get('_profile')
 );

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BodyCell should render component correctly with default props 1`] = `
+<TableCell
+  classes={
+    Object {
+      "body": "MuiTableCell-body-3",
+      "footer": "MuiTableCell-footer-4",
+      "head": "MuiTableCell-head-2",
+      "numeric": "MuiTableCell-numeric-5",
+      "paddingCheckbox": "MuiTableCell-paddingCheckbox-7",
+      "paddingDense": "MuiTableCell-paddingDense-6",
+      "paddingNone": "MuiTableCell-paddingNone-8",
+      "root": "MuiTableCell-root-1",
+    }
+  }
+  numeric={false}
+  padding="default"
+>
+  1
+</TableCell>
+`;
+
+exports[`BodyCell should render component correctly with nested key 1`] = `
+<TableCell
+  classes={
+    Object {
+      "body": "MuiTableCell-body-3",
+      "footer": "MuiTableCell-footer-4",
+      "head": "MuiTableCell-head-2",
+      "numeric": "MuiTableCell-numeric-5",
+      "paddingCheckbox": "MuiTableCell-paddingCheckbox-7",
+      "paddingDense": "MuiTableCell-paddingDense-6",
+      "paddingNone": "MuiTableCell-paddingNone-8",
+      "root": "MuiTableCell-root-1",
+    }
+  }
+  numeric={false}
+  padding="default"
+>
+  My name
+</TableCell>
+`;
+
+exports[`BodyCell should render component correctly with some valueFormatter and valueRenderer props 1`] = `
+<TableCell
+  classes={
+    Object {
+      "body": "MuiTableCell-body-3",
+      "footer": "MuiTableCell-footer-4",
+      "head": "MuiTableCell-head-2",
+      "numeric": "MuiTableCell-numeric-5",
+      "paddingCheckbox": "MuiTableCell-paddingCheckbox-7",
+      "paddingDense": "MuiTableCell-paddingDense-6",
+      "paddingNone": "MuiTableCell-paddingNone-8",
+      "root": "MuiTableCell-root-1",
+    }
+  }
+  numeric={false}
+  padding="default"
+>
+  <span>
+    My name2
+  </span>
+</TableCell>
+`;
