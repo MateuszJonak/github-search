@@ -2,6 +2,7 @@
 .*/node_modules/.*
 .*/build/.*
 .*/config-overrides.js*
+.*/flow-typed/.*
 
 [include]
 
@@ -13,9 +14,5 @@ flow-typed
 
 [options]
 all=true
-module.name_mapper='^\(.*\)\.module\.css$' -> 'CSSModule'
-module.name_mapper='^\(.*\)\.module\.sass$' -> 'CSSModule'
-module.name_mapper='^\(.*\)\.module\.scss$' -> 'CSSModule'
-module.system=haste
 
 [strict]

@@ -3,12 +3,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Root from './Root';
 import registerServiceWorker from './registerServiceWorker';
 
 const root: ?Element = document.getElementById('root');
 
 if (root != null) {
-  ReactDOM.render(<App />, root);
+  ReactDOM.render(<Root />, root);
 }
 registerServiceWorker();

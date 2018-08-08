@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput should render component correctly with props 1`] = `
+<TextField
+  error={false}
+  helperText=""
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  required={false}
+  select={false}
+  value="value"
+/>
+`;
+
+exports[`TextInput should render component correctly with props error 1`] = `
+<TextField
+  error={true}
+  helperText="error"
+  onBlur={[Function]}
+  onChange={[Function]}
+  onFocus={[Function]}
+  required={false}
+  select={false}
+  value="value"
+/>
+`;
