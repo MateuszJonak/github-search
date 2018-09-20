@@ -8,7 +8,7 @@ Screenshot:
 
 ## Setup configuration
 
-To provide a authorisation by GitHub OAuth with "Log in with GitHub" button, I used a library called `react-social-login` ([https://github.com/deepakaggarwal7/react-social-login#github-specifics](https://github.com/deepakaggarwal7/react-social-login#github-specifics)). This lib required a deployed instance of application called `Gatekeeper` ([https://github.com/prose/gatekeeper](https://github.com/prose/gatekeeper)) to authorisation user using OAUTH_CLIENT_ID and OAUTH_CLIENT_SECRET. For development I deployed Gatekeeper on Heroku with adress: `https://gatekeeper-github.herokuapp.com`. For using this instance You must to use this client id: `83c44180f7095d5c4735`. This two values should be provided to application by `.env` variables. Also You should define for which url github should redirect his response. For development I always set this variable to: `http://localhost:3000`.
+To provide a authorisation by GitHub OAuth with "Log in with GitHub" button, I used a library called `react-social-login` ([https://github.com/deepakaggarwal7/react-social-login#github-specifics](https://github.com/deepakaggarwal7/react-social-login#github-specifics)). This lib required a deployed instance of application called `Gatekeeper` ([https://github.com/prose/gatekeeper](https://github.com/prose/gatekeeper)) to authorisation user using OAUTH_CLIENT_ID and OAUTH_CLIENT_SECRET. This two values should be provided to application by `.env` variables. Also You should define for which url github should redirect his response. For development I always set this variable to: `http://localhost:3000`.
 
 ## Available Scripts
 
