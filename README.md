@@ -4,7 +4,7 @@
 
 Application was created based on `create-react-app`. To build a nice look interface I used `material-ui`. This lib provide something called JSS that is more powerful abstraction over CSS. All application state is persisted in localstorage except of data about logged github profile.
 Screenshot:
-![screenshot](https://gitlab.com/MateuszJonak/github-search/raw/master/screenshot.png)
+![screenshot](https://github.com/MateuszJonak/github-search/raw/master/screenshot.png)
 
 ## Setup configuration
 
